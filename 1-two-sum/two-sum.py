@@ -1,17 +1,10 @@
-# class Solution:
-#     def twoSum(self, nums: List[int], target: int) -> List[int]:
-#         n = len(nums)
-#         for i in range(n - 1):
-#             for j in range(i + 1, n):
-#                 if nums[i] + nums[j] == target:
-#                     return [i, j]
-#         return []  # No solution found
-class Solution:
-    def twoSum(self, nums: List[int], target: int) -> List[int]:
-        n=len(nums)
-        for i in range(0,n-1):
-            for j in range(i+1,n):
+class Solution(object):
+    def twoSum(self, nums, target):
+        res=[]
+        for i in range(1,len(nums)):
+            for j in range(0,i):
                 if nums[i]+nums[j]==target:
-                    return[i,j]
-        return[]
-
+                    res.append(i)
+                    res.append(j)
+        return res
+        
