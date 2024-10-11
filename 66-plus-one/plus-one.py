@@ -1,20 +1,20 @@
-class Solution:
-    def plusOne(self, digits: List[int]) -> List[int]:
-        n=len(digits)
-        for i in range(n-1,-1,-1):
-            if(digits[i]!=9):
-                digits[i]+=1
-                return digits
-            elif(digits[i]+1==10):
-                digits[i]=0
-        digits.insert(0,1)
-        return digits
-                
-                
+class Solution(object):
+    def plusOne(self, digits):
+        ans=[]
+        b=0
+        n=len(digits)-1
+        for i in digits:
+            b+=i*(10**n)
+            n-=1
+        b=b+1
+        while(b!=0):
+            ans.append(b%10)
+            b=b/10
+        ans.reverse()
+        return ans
+
+
+        
                 
 
-                
-
-            
-            
-                
+        
